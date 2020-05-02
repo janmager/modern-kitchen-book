@@ -1,6 +1,6 @@
 ## modern-kitchen-book
 
-[![version tag](https://img.shields.io/badge/version-1.1.1-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
+[![version tag](https://img.shields.io/badge/version-1.1.2-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
 ![GitHub](https://img.shields.io/github/license/janmager/modern-kitchen-book)
 
 ## 🍲 API Source
