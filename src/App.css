@@ -1,6 +1,17 @@
+/*
+  light - #f4f4f4
+  darkgrey - #222222
+  semigrey - #363636
+  lightgrey - #777777
+  darkorange - #d2573a
+  lightorange - #ea7443
+*/
+
 .App{
   min-height: 100vh;
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-image: linear-gradient(to top, #222222 0%, #363636 100%);
+  color: #ececec;
+  padding-bottom: 100px;
 }
 .search-form{
   min-height: 10vh;
@@ -17,7 +28,7 @@
   padding: 10px;
 }
 .search-button{
-  background: lightcoral;
+  background: #ea7443;
   border: none;
   outline: none;
   cursor: pointer;
