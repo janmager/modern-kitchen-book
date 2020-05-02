@@ -1,10 +1,11 @@
 # modern-kitchen-book
 🍲 Website with foods informations and recipes
+
 [![license](https://img.shields.io/github/license/janmager/modern-kitchen-book.svg)](https://github.com/janmager/mordern-kitchen-book)
 
 ----------------------------
 
-## API Source
+## 🥪 API Source
 https://www.edamam.com/
 
 ----------------------------
