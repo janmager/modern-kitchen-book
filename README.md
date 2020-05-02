@@ -15,7 +15,7 @@ https://www.edamam.com/
 - added time to prepare (not formatted and validated) on searching screen
 - some mobile corrections
 
-![v1.1.1](https://raw.githubusercontent.com/janmager/modern-kitchen-book/master/img/v1-1.png)
+![v1.1.2](https://raw.githubusercontent.com/janmager/modern-kitchen-book/master/img/v1-2.png)
 
 #### v. 1.1.1 - First upload
 
