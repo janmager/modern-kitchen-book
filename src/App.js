@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Recipes from './Recipes';
+import Recipes from './Recipes/Recipes';
 import './App.css';
 
 const App = () => {
