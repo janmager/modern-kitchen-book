@@ -15,9 +15,12 @@ https://www.edamam.com/
 
 ## 🍰 If u want to try on your machine
 
+Make sure that you have installed NPM, REACT and REACT-SCRIPTS
+
 ```sh
 git clone https://github.com/janmager/modern-kitchen-book.git
 cd modern-kitchen-book
+npm install
 npm start
 ```
 
@@ -26,6 +29,8 @@ npm start
 #### v. 1.1.5 - Better code
 
 - recode to newest React Standards
+- little CSS fixes
+- updates 'How to run' in README file
 
 #### v. 1.1.4 - Some little design fixtures
 
