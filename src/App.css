@@ -7,14 +7,18 @@
   lightorange - #ea7443
 */
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
+
 .App{
   min-height: 100vh;
   background-image: linear-gradient(to top, #222222 0%, #363636 100%);
   color: #ececec;
   padding-bottom: 100px;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
 }
 .search-form{
-  min-height: 10vh;
+  margin-top: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,9 +42,17 @@
 }
 .recipes{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 h2{
+  margin: 0 auto;
   text-align: center;
+  margin-top: 50px;
+  font-weight: 500;
+  padding-bottom: 25px;
+  max-width: 600px;
+  width: 90%;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #777777;
 }

@@ -1,14 +1,12 @@
 .recipe{
-    border-radius: 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     width: 100%;
     position: relative;
-    margin-top: 40px;
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 15px;
     background: rgba(255,255,255,0.6);
 }
 .btn{
@@ -20,11 +18,12 @@
     cursor: pointer;
 }
 .mainImg{
-    border-radius: 20px;
+    border-radius: 15px;
 }
-h1{
+h3{
     margin: 0px;
     font-size: 18px;
+    font-weight: 600;
     text-align: center;
     padding: 20px 10px;
 }
@@ -44,8 +43,8 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 .timeToPrepare{
     position: absolute;
@@ -58,8 +57,12 @@ a{
     padding: 5px 8px;
     border-radius: 10px;
     font-size: 13px;
-    font-weight: 800;
+    font-weight: 600;
 }
 .clockIcon{
     margin-top: 2px;
+}
+.main{
+    max-width: 250px;
+    margin: 10px;
 }

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Recipes from './Recipes/Recipes';
+import Logo from './Logo/Logo';
 import './App.css';
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
 
   return(
     <div className="App">
+      <Logo logoText1="Recipe" logoText2="Me" />
       <form className="search-form" onSubmit={getSearch}>
         <input className="search-bar" type="text" value={search} onChange={updateSearch} placeholder="np. chicken"/>
         <button className="search-button" type="submit">

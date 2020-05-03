@@ -28,6 +28,10 @@ npm start
 - added new paragraphs to README
 - added fontawesome module to project and changed icon of time to prepare
 - tidy has been made in project folders
+- if title is longer than 20 letters - adding (...) in the end
+- little images of food on the main screen
+- added logo
+- changed font to Poppins
 
 #### v. 1.1.3 - Time to prepare on the main screen
 

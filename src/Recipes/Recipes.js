@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Recipes = ({all}) => {
     return(
-        <Link to={{ pathname: `/recipe/${all.url}`, state: { recipe: all} }}>
+        <Link className={style.main} to={{ pathname: `/recipe/${all.url}`, state: { recipe: all} }}>
             <div className={style.recipe}>
                 {all.totalTime==0 ?
                 "":
@@ -27,9 +27,13 @@ const Recipes = ({all}) => {
                 </ol> */}
                 <img className={style.mainImg} src={all.image} alt='' />
                 <div className={style.onImg}>
-                    <h1>    
-                        {all.label} 
-                    </h1>
+                    <h3>    
+                        {
+                            (all.label).length>20 ?
+                            (all.label).substring(0,20)+"..." :
+                            all.label
+                        } 
+                    </h3>
                 </div>
             </div>
         </Link>
