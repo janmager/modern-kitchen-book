@@ -1,6 +1,6 @@
 ## modern-kitchen-book
 
-[![version tag](https://img.shields.io/badge/version-1.1.4-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
+[![version tag](https://img.shields.io/badge/version-1.1.5-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
 ![GitHub](https://img.shields.io/github/license/janmager/modern-kitchen-book)
 
 ## 🍲 API Source
@@ -23,7 +23,11 @@ npm start
 
 ## 🥪 Release Notes
 
-#### v. 1.1.4 - Time to prepare on the main screen
+#### v. 1.1.5 - Better code
+
+- recode to newest React Standards
+
+#### v. 1.1.4 - Some little design fixtures
 
 - added new paragraphs to README
 - added fontawesome module to project and changed icon of time to prepare
