@@ -31,7 +31,10 @@ npm start
 - if title is longer than 20 letters - adding (...) in the end
 - little images of food on the main screen
 - added logo
-- changed font to Poppins
+- changed font to Open Sans
+- little UI main screen modifications
+
+![v1.1.4](https://raw.githubusercontent.com/janmager/modern-kitchen-book/master/img/v1-4.png)
 
 #### v. 1.1.3 - Time to prepare on the main screen
 
