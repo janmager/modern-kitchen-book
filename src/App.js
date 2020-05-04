@@ -10,7 +10,10 @@ class App extends React.Component {
     APP_ID: "1107b38c",
     APP_KEY: "9d1be84bb7db421688f0fac4c1451706",
     search: "chicken",
-    recipes: []
+    recipes: [],
+    loading: false,
+    currentPage: 1,
+    postsPerPage: 5
   }
 
   componentDidMount = () => {
@@ -27,6 +30,9 @@ class App extends React.Component {
   }
 
   getRecipes = async() => {
+    this.setState({
+      loading: true
+    })
     const response = await fetch(
       `https://api.edamam.com/search?q=${this.state.search}&app_id=${this.state.APP_ID}&app_key=${this.state.APP_KEY}&to=20`
     );
@@ -35,6 +41,9 @@ class App extends React.Component {
       recipes: data.hits
     });
     console.log(data.hits);
+    this.setState({
+      loading: false
+    })
   };
 
   render(){
@@ -45,9 +54,16 @@ class App extends React.Component {
           searchValue={this.state.search} 
           getSearch={this.getSearch}
         />
-        <h2>Results for: {this.state.search}</h2>
-        <Recipes recipes={this.state.recipes} />
-        <Pagination />
+        {this.state.loading 
+          ? 
+            <h3>Loading...</h3> 
+          : 
+            <div>
+              <h2>Results for: {this.state.search}</h2>
+              <Recipes loading={this.state.loading} recipes={this.state.recipes} />
+              {/* <Pagination /> */}
+            </div>
+        }
       </div>
    );
   }
