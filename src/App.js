@@ -55,7 +55,7 @@ class App extends React.Component {
             Search
           </button>
         </form>
-        <h2>Wyszukiwania dla: {this.state.query}</h2>
+        <h2>Results for: {this.state.query}</h2>
         <div className='recipes'>
           {this.state.recipes.map(recipe => (
             <Recipes 
@@ -67,7 +67,7 @@ class App extends React.Component {
       </div>
    );
   }
-  
+
 }
 
 export default App;

@@ -6,6 +6,10 @@ body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #222222 0%, #363636 100%);
+  color: #ececec;
+  padding-bottom: 50px;
 }
 
 code {

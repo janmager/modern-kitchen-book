@@ -9,10 +9,7 @@
 
 
 .App{
-  min-height: 100vh;
-  background-image: linear-gradient(to top, #222222 0%, #363636 100%);
-  color: #ececec;
-  padding-bottom: 100px;
+
 }
 .search-form{
   margin-top: 25px;
