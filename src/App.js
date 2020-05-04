@@ -46,14 +46,7 @@ class App extends React.Component {
           getSearch={this.getSearch}
         />
         <h2>Results for: {this.state.search}</h2>
-        <div className='recipes'>
-          {this.state.recipes.map(recipe => (
-            <Recipes 
-              all={recipe.recipe}
-              key={recipe.recipe.url}
-            /> 
-          ))}
-        </div>
+        <Recipes recipes={this.state.recipes} />
         <Pagination />
       </div>
    );
