@@ -1,0 +1,23 @@
+.searchForm{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .searchBar{
+    width: 90%;
+    font-size: 16px;
+    max-width: 500px;
+    border: none;
+    outline: none;
+    padding: 10px;
+  }
+  .searchButton{
+    background: #ea7443;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    color: white;
+  }
