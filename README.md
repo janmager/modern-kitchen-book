@@ -28,7 +28,7 @@ npm start
 
 #### v. 1.1.8 - Pagination system
 
-- maded pagination system (with basic design)
+- made pagination system (with basic design)
 
 ![v1.1.8](https://raw.githubusercontent.com/janmager/modern-kitchen-book/master/img/v1-8.png)
 
