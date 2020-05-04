@@ -1,6 +1,6 @@
 ## modern-kitchen-book
 
-[![version tag](https://img.shields.io/badge/version-1.1.5-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
+[![version tag](https://img.shields.io/badge/version-1.1.6-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
 ![GitHub](https://img.shields.io/github/license/janmager/modern-kitchen-book)
 
 ## 🍲 API Source
@@ -25,6 +25,11 @@ npm start
 ```
 
 ## 🥪 Release Notes
+
+#### v. 1.1.6 - Folders structure
+
+- different folders structure, more clean
+- little CSS changes
 
 #### v. 1.1.5 - Better code
 
