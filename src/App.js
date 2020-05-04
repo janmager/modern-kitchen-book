@@ -14,11 +14,38 @@ class App extends React.Component {
     recipes: [],
     loading: false,
     currentPage: 1,
-    postsPerPage: 5
+    recipesPerPage: 5,
+    indexOfLastRecipe: null,
+    indexOfFirstRecipe: null,
+    currentRecipes: [],
+    totalAmoutOfSearchedRecipes: 50
   }
 
   componentDidMount = () => {
     this.getRecipes();
+  }
+
+  updatePagination = () => {
+    this.setState({
+      indexOfLastRecipe: this.state.currentPage*this.state.recipesPerPage
+    },
+      () => { 
+        console.log('indexOfLastRecipe: '+this.state.indexOfLastRecipe);
+        this.setState({
+          indexOfFirstRecipe: this.state.indexOfLastRecipe-this.state.recipesPerPage
+        },
+          () => { 
+            console.log('indexOfFirstRecipe: '+this.state.indexOfFirstRecipe);
+            this.setState({
+              currentRecipes: this.state.recipes.slice(this.state.indexOfFirstRecipe,this.state.indexOfLastRecipe)
+            },
+              () => { console.log(this.state.currentRecipes);
+               }
+            )
+          }
+        )
+      }
+    )
   }
   
   getSearch = (e) => {
@@ -35,17 +62,28 @@ class App extends React.Component {
       loading: true
     })
     const response = await fetch(
-      `https://api.edamam.com/search?q=${this.state.search}&app_id=${this.state.APP_ID}&app_key=${this.state.APP_KEY}&to=20`
+      `https://api.edamam.com/search?q=${this.state.search}&app_id=${this.state.APP_ID}&app_key=${this.state.APP_KEY}&to=${this.state.totalAmoutOfSearchedRecipes}`
     );
     const data = await response.json();
     this.setState({
       recipes: data.hits
-    });
-    console.log(data.hits);
+    },
+      () => {
+        console.log(data.hits)
+        this.setState({
+          loading: false
+        }, this.updatePagination()
+        )
+      }
+    )
+  }
+
+  paginate = (number) => {
     this.setState({
-      loading: false
-    })
-  };
+      currentPage: number
+    },
+    () => { this.updatePagination() })
+  }
 
   render(){
     return(
@@ -61,8 +99,8 @@ class App extends React.Component {
           : 
             <div>
               <ResultsFor search={this.state.search} />
-              <Recipes loading={this.state.loading} recipes={this.state.recipes} />
-              {/* <Pagination /> */}
+              <Recipes loading={this.state.loading} recipes={this.state.currentRecipes} />
+              <Pagination recipesPerPage={this.state.recipesPerPage} totalRecipes={this.state.recipes.length} paginate={this.paginate} />
             </div>
         }
       </div>
