@@ -2,6 +2,7 @@ import React from 'react';
 import Recipes from './components/Recipes/Recipes';
 import Logo from './components/Logo/Logo';
 import Pagination from './components/Pagination/Pagination';
+import ResultsFor from './components/ResultsFor/ResultsFor';
 import SearchForm from './components/SearchForm/SearchForm';
 import './App.css';
 
@@ -59,7 +60,7 @@ class App extends React.Component {
             <h3>Loading...</h3> 
           : 
             <div>
-              <h2>Results for: {this.state.search}</h2>
+              <ResultsFor search={this.state.search} />
               <Recipes loading={this.state.loading} recipes={this.state.recipes} />
               {/* <Pagination /> */}
             </div>

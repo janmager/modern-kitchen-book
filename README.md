@@ -26,10 +26,11 @@ npm start
 
 ## 🥪 Release Notes
 
-#### v. 1.1.7 - Folders structure
+#### v. 1.1.7 - Loading script
 
 - divided to more components
 - loading script
+- little mobile UI CSS improvements
 
 ![v1.1.7](https://raw.githubusercontent.com/janmager/modern-kitchen-book/master/img/v1-7.png)
 
