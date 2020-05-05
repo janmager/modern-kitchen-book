@@ -1,6 +1,9 @@
 import React from 'react'
 import style from './pagination.module.css';
 
+import { faCaretLeft,faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class Pagination extends React.Component{
     state = {
         pageNumbers: []
@@ -17,9 +20,11 @@ class Pagination extends React.Component{
     render(){
         return(
             <div className={style.paginationBox}>
+                <span onClick={() => this.props.prevPaginate()}> <FontAwesomeIcon icon={faCaretLeft} /> </span>
                 {this.state.pageNumbers.map(number =>(
                     <span onClick={() => this.props.paginate(number)} key={number}>{number}</span>
                 ))}
+                <span onClick={() => this.props.nextPaginate()}> <FontAwesomeIcon icon={faCaretRight} /> </span>
             </div>
         )
     }

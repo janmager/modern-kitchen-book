@@ -16,14 +16,3 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-h2{
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 50px;
-  font-weight: 500;
-  padding-bottom: 25px;
-  max-width: 600px;
-  width: 90%;
-  margin-bottom: 25px;
-  border-bottom: 2px solid #777777;
-}

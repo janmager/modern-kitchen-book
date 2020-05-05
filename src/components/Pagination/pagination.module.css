@@ -2,7 +2,9 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
 }
 .paginationBox span{
     font-weight: bold;
@@ -10,4 +12,10 @@
     margin: 15px;
     border: 2px solid white;
     cursor: pointer;
+    transition: .2s;
+}
+.paginationBox span:hover{
+    background: white;
+    color: black;
+    transition: .2s;
 }

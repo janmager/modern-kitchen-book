@@ -1,6 +1,6 @@
 ## modern-kitchen-book
 
-[![version tag](https://img.shields.io/badge/version-1.1.8-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
+[![version tag](https://img.shields.io/badge/version-1.1.9-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
 ![GitHub](https://img.shields.io/github/license/janmager/modern-kitchen-book)
 
 ## 🍲 API Source
@@ -25,6 +25,14 @@ npm start
 ```
 
 ## 🥪 Release Notes
+
+#### v. 1.1.9 - Design
+
+- added arrows next and prev to pagination system
+- 6 recipes in the row, 12 on the one page
+- showing only that recipes which has got information about time to prepare 
+
+![v1.1.9](https://raw.githubusercontent.com/janmager/modern-kitchen-book/master/img/v1-9.png)
 
 #### v. 1.1.8 - Pagination system
 

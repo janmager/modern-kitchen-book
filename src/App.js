@@ -14,11 +14,12 @@ class App extends React.Component {
     recipes: [],
     loading: false,
     currentPage: 1,
-    recipesPerPage: 5,
+    recipesPerPage: 12,
     indexOfLastRecipe: null,
     indexOfFirstRecipe: null,
     currentRecipes: [],
-    totalAmoutOfSearchedRecipes: 50
+    totalAmoutOfSearchedRecipes: 50,
+    filteredRecipes: []
   }
 
   componentDidMount = () => {
@@ -30,17 +31,16 @@ class App extends React.Component {
       indexOfLastRecipe: this.state.currentPage*this.state.recipesPerPage
     },
       () => { 
-        console.log('indexOfLastRecipe: '+this.state.indexOfLastRecipe);
+        // console.log('indexOfLastRecipe: '+this.state.indexOfLastRecipe);
         this.setState({
           indexOfFirstRecipe: this.state.indexOfLastRecipe-this.state.recipesPerPage
         },
           () => { 
-            console.log('indexOfFirstRecipe: '+this.state.indexOfFirstRecipe);
+            // console.log('indexOfFirstRecipe: '+this.state.indexOfFirstRecipe);
             this.setState({
               currentRecipes: this.state.recipes.slice(this.state.indexOfFirstRecipe,this.state.indexOfLastRecipe)
             },
-              () => { console.log(this.state.currentRecipes);
-               }
+              // () => { console.log(this.state.currentRecipes);}
             )
           }
         )
@@ -59,7 +59,8 @@ class App extends React.Component {
 
   getRecipes = async() => {
     this.setState({
-      loading: true
+      loading: true,
+      currentPage: 1
     })
     const response = await fetch(
       `https://api.edamam.com/search?q=${this.state.search}&app_id=${this.state.APP_ID}&app_key=${this.state.APP_KEY}&to=${this.state.totalAmoutOfSearchedRecipes}`
@@ -69,9 +70,15 @@ class App extends React.Component {
       recipes: data.hits
     },
       () => {
-        console.log(data.hits)
+        let fRecipes = this.state.recipes.filter((recipe) => {
+          if(recipe.recipe.totalTime!==0) return true
+          else return false
+        })
+        console.log(fRecipes);
+        // console.log(this.state.recipes)
         this.setState({
-          loading: false
+          loading: false,
+          recipes: fRecipes
         }, this.updatePagination()
         )
       }
@@ -83,6 +90,24 @@ class App extends React.Component {
       currentPage: number
     },
     () => { this.updatePagination() })
+  }
+
+  prevPaginate = () => {    
+    if(this.state.currentPage>1){
+      this.setState({
+        currentPage: this.state.currentPage-1
+      },
+      () => { this.updatePagination() })
+    }
+  }
+
+  nextPaginate = () => {
+    if(this.state.currentPage<(Math.ceil(this.state.recipes.length/this.state.recipesPerPage))){
+      this.setState({
+        currentPage: this.state.currentPage+1
+      },
+      () => { this.updatePagination() })
+    }
   }
 
   render(){
@@ -100,7 +125,7 @@ class App extends React.Component {
             <div>
               <ResultsFor search={this.state.search} />
               <Recipes loading={this.state.loading} recipes={this.state.currentRecipes} />
-              <Pagination recipesPerPage={this.state.recipesPerPage} totalRecipes={this.state.recipes.length} paginate={this.paginate} />
+              <Pagination recipesPerPage={this.state.recipesPerPage} totalRecipes={this.state.recipes.length} paginate={this.paginate} prevPaginate={this.prevPaginate} nextPaginate={this.nextPaginate} />
             </div>
         }
       </div>

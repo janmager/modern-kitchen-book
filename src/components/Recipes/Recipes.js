@@ -1,11 +1,13 @@
 import React from 'react';
 import Card from './Card/Card';
+import style from './recipes.module.css'
 
 class Recipes extends React.Component{
     render(){
-        const { recipes } = this.props;
+        let { recipes } = this.props;
+    
         return(
-            <div className='recipes'>
+            <div className={style.recipes}>
             {recipes.map(recipe => (
                 <Card 
                     all={recipe.recipe}
