@@ -125,7 +125,7 @@ class App extends React.Component {
             <div>
               <ResultsFor search={this.state.search} />
               <Recipes loading={this.state.loading} recipes={this.state.currentRecipes} />
-              <Pagination recipesPerPage={this.state.recipesPerPage} totalRecipes={this.state.recipes.length} paginate={this.paginate} prevPaginate={this.prevPaginate} nextPaginate={this.nextPaginate} />
+              <Pagination currentPage={this.state.currentPage} recipesPerPage={this.state.recipesPerPage} totalRecipes={this.state.recipes.length} paginate={this.paginate} prevPaginate={this.prevPaginate} nextPaginate={this.nextPaginate} />
             </div>
         }
       </div>

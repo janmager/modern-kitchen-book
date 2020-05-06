@@ -19,3 +19,8 @@
     color: black;
     transition: .2s;
 }
+span.active{
+    background: #ea7443;
+    border: 2px solid #ea7443;
+    color: white;
+}
