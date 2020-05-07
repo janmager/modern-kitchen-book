@@ -23,7 +23,10 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    this.getRecipes();
+    this.setState({
+      search: this.props.location.state.currentSearch
+    },
+      () => this.getRecipes())
   }
 
   updatePagination = () => {
@@ -124,7 +127,7 @@ class App extends React.Component {
           : 
             <div>
               <ResultsFor search={this.state.search} />
-              <Recipes loading={this.state.loading} recipes={this.state.currentRecipes} />
+              <Recipes currentSearch={this.state.search} loading={this.state.loading} recipes={this.state.currentRecipes} />
               <Pagination currentPage={this.state.currentPage} recipesPerPage={this.state.recipesPerPage} totalRecipes={this.state.recipes.length} paginate={this.paginate} prevPaginate={this.prevPaginate} nextPaginate={this.nextPaginate} />
             </div>
         }

@@ -1,12 +1,15 @@
-import React from 'react';
-import style from './recipe.module.css';
+import React from 'react'
+import style from './recipe.module.css'
+
+import { Link } from 'react-router-dom'
 
 class Recipe extends React.Component {
     render(){
-        const { recipe } = this.props.location.state;
+        const { recipe, currentSearch } = this.props.location.state;
         console.log(recipe);
         return(
             <div className={style.main}>
+                <Link to={{pathname: '/', state: {currentSearch: currentSearch}}}>Back to home</Link>
                 <h1>{recipe.label}</h1>
                 <p>{parseFloat(recipe.calories.toFixed(0))} kcal</p>
                 <p>Ilość porcji: {recipe.yield}</p>

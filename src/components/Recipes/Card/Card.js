@@ -8,10 +8,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Card extends React.Component{
     render(){
-        const { all } = this.props;
+        const { all, currentSearch } = this.props;
 
         return(
-            <Link className={style.main} to={{ pathname: `/recipe/${all.url}`, state: { recipe: all} }}>
+            <Link className={style.main} to={{ pathname: `/recipe/${all.url}`, state: { recipe: all, currentSearch: currentSearch} }}>
                 <div className={style.recipe}>
                     {all.totalTime===0 ?
                     "":

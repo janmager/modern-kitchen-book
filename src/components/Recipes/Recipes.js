@@ -4,7 +4,7 @@ import style from './recipes.module.css'
 
 class Recipes extends React.Component{
     render(){
-        let { recipes } = this.props;
+        let { recipes, currentSearch } = this.props;
     
         return(
             <div className={style.recipes}>
@@ -12,6 +12,7 @@ class Recipes extends React.Component{
                 <Card 
                     all={recipe.recipe}
                     key={recipe.recipe.url}
+                    currentSearch={currentSearch}
                 /> 
             ))}
             </div>
