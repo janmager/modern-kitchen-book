@@ -1,6 +1,6 @@
 ## modern-kitchen-book
 
-[![version tag](https://img.shields.io/badge/version-1.1.10-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
+[![version tag](https://img.shields.io/badge/version-1.1.11-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
 ![GitHub](https://img.shields.io/github/license/janmager/modern-kitchen-book)
 
 ## 🍲 API Source
@@ -25,6 +25,13 @@ npm start
 ```
 
 ## 🥪 Release Notes
+
+#### v. 1.1.11 - Pagination design
+
+- added searching filters (vegetaria, vegan, low sugar, fish free, fat free, gluten free, egg free, dairy free) just design without methods and functions
+- fixed bugs with hover on active page box in pagination component
+
+![v1.1.11](https://raw.githubusercontent.com/janmager/modern-kitchen-book/master/img/v1-11.png)
 
 #### v. 1.1.10 - Pagination design
 

@@ -20,11 +20,11 @@ class Pagination extends React.Component{
     render(){
         return(
             <div className={style.paginationBox}>
-                <span onClick={() => this.props.prevPaginate()}> <FontAwesomeIcon icon={faCaretLeft} /> </span>
+                <span onClick={() => this.props.prevPaginate()} className={style.arrow}> <FontAwesomeIcon icon={faCaretLeft} /> </span>
                 {this.state.pageNumbers.map(number =>(
-                    <span className={this.props.currentPage===number ? style.active : ''} onClick={() => this.props.paginate(number)} key={number}>{number}</span>
+                    <span className={this.props.currentPage===number ? style.active : style.disactive} onClick={() => this.props.paginate(number)} key={number}>{number}</span>
                 ))}
-                <span onClick={() => this.props.nextPaginate()}> <FontAwesomeIcon icon={faCaretRight} /> </span>
+                <span onClick={() => this.props.nextPaginate()} className={style.arrow}> <FontAwesomeIcon icon={faCaretRight} /> </span>
             </div>
         )
     }

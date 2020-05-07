@@ -33,8 +33,8 @@ class Card extends React.Component{
                     <div className={style.onImg}>
                         <h3>    
                             {
-                                (all.label).length>17 ?
-                                (all.label).substring(0,17)+"..." :
+                                (all.label).length>15 ?
+                                (all.label).substring(0,15)+"..." :
                                 all.label
                             } 
                         </h3>
