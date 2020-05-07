@@ -1,6 +1,6 @@
 ## modern-kitchen-book
 
-[![version tag](https://img.shields.io/badge/version-1.1.12-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
+[![version tag](https://img.shields.io/badge/version-1.1.13-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
 ![GitHub](https://img.shields.io/github/license/janmager/modern-kitchen-book)
 
 ## 🍲 API Source
@@ -26,9 +26,17 @@ npm start
 
 ## 🥪 Release Notes
 
+#### v. 1.1.13 - Filters of searching recipes
+
+- made filters of searching recipes
+
+![v1.1.13](https://raw.githubusercontent.com/janmager/modern-kitchen-book/master/img/v1-13.png)
+
 #### v. 1.1.12 - Go back from recipe subpage
 
 - added 'Back to home' on recipe subpage
+- fixed bug with 'loading' text
+- fixed mobile flex wrap with filters
 
 #### v. 1.1.11 - Filters in search form
 

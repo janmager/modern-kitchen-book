@@ -6,13 +6,3 @@
   darkorange - #d2573a
   lightorange - #ea7443
 */
-
-
-.App{
-
-}
-.recipes{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}

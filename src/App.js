@@ -4,7 +4,7 @@ import Logo from './components/Logo/Logo';
 import Pagination from './components/Pagination/Pagination';
 import ResultsFor from './components/ResultsFor/ResultsFor';
 import SearchForm from './components/SearchForm/SearchForm';
-import './App.css';
+import style from './App.css'
 
 class App extends React.Component {
   state = {
@@ -18,15 +18,21 @@ class App extends React.Component {
     indexOfLastRecipe: null,
     indexOfFirstRecipe: null,
     currentRecipes: [],
-    totalAmoutOfSearchedRecipes: 50,
-    filteredRecipes: []
+    totalAmoutOfSearchedRecipes: 100,
+    filteredRecipes: [],
+    healtyLabels: []
   }
 
   componentDidMount = () => {
-    this.setState({
-      search: this.props.location.state.currentSearch
-    },
-      () => this.getRecipes())
+    // if(this.props.location.state.currentSearch){
+    //   this.setState({
+    //     search: this.props.location.state.currentSearch
+    //   },
+    //     () => this.getRecipes())
+    // }
+    // else{
+      this.getRecipes()
+    // }
   }
 
   updatePagination = () => {
@@ -67,17 +73,41 @@ class App extends React.Component {
     })
     const response = await fetch(
       `https://api.edamam.com/search?q=${this.state.search}&app_id=${this.state.APP_ID}&app_key=${this.state.APP_KEY}&to=${this.state.totalAmoutOfSearchedRecipes}`
-    );
+      // `https://api.edamam.com/search?q=${this.state.search}&app_id=${this.state.APP_ID}&app_key=${this.state.APP_KEY}&to=${this.state.totalAmoutOfSearchedRecipes}${(this.state.healtyLabels.length>0 ? '&health='+this.state.healtyLabels.join('&health=') : '')}`
+    );    
     const data = await response.json();
     this.setState({
       recipes: data.hits
     },
       () => {
+        // console.log('raw: '+this.state.recipes.length);
+        
         let fRecipes = this.state.recipes.filter((recipe) => {
+          console.log(recipe.recipe.healthLabels);
+          
           if(recipe.recipe.totalTime!==0) return true
           else return false
         })
+        // console.log('with time: '+fRecipes.length);
+
+        if(this.state.healtyLabels.length>0){
+          let healthyLabelsFilter = [...this.state.healtyLabels]
+          let len = healthyLabelsFilter.length
+          fRecipes = fRecipes.filter(recipe => {
+            let correct = 0
+            let healthyLabelsApi = [...recipe.recipe.healthLabels]
+            healthyLabelsFilter.map(label => {
+              healthyLabelsApi.map(l => {                
+                if(label==l) correct += 1
+              })
+            })
+            if(correct===len) return true
+            else return false
+          })
+        }
+        // console.log('with filters: '+fRecipes.length);
         console.log(fRecipes);
+        
         // console.log(this.state.recipes)
         this.setState({
           loading: false,
@@ -113,13 +143,40 @@ class App extends React.Component {
     }
   }
 
+  chooseHealtyLabel = (label) => {
+    let labels = [...this.state.healtyLabels]
+    labels.push(label)
+    this.setState({
+      healtyLabels: labels
+    },
+    () => {
+      console.log('choosed: '+this.state.healtyLabels)
+      this.getRecipes()
+    })
+  }
+
+  deleteHealtyLabel = (label) => {
+    console.log('to del: '+label);
+    let labels = [...this.state.healtyLabels]
+    labels = labels.filter(item => item !== label)
+    this.setState({
+      healtyLabels: labels
+    },
+    () => {
+      console.log('choosed: '+this.state.healtyLabels)
+      this.getRecipes()
+    })
+  }
+
   render(){
     return(
-      <div className="App">
+      <div className={style.App}>
         <Logo logoText1="Recipe" logoText2="Me" />
         <SearchForm 
           searchValue={this.state.search} 
           getSearch={this.getSearch}
+          chooseHealtyLabel={this.chooseHealtyLabel}
+          deleteHealtyLabel={this.deleteHealtyLabel}
         />
         {this.state.loading 
           ? 
