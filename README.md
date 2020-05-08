@@ -3,6 +3,10 @@
 [![version tag](https://img.shields.io/badge/version-1.1.13-brightgreen.svg)](https://github.com/janmager/modern-kitchen-book)
 ![GitHub](https://img.shields.io/github/license/janmager/modern-kitchen-book)
 
+## 🍉 LIVE Demo
+
+http://www.janmager.pl/recipeme
+
 ## 🍲 API Source
 
 https://www.edamam.com/
