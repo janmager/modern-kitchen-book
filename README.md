@@ -5,7 +5,7 @@
 
 ## 🍉 LIVE Demo
 
-http://www.janmager.pl/recipeme
+https://naughty-mccarthy-d9b4e0.netlify.app/
 
 ## 🍲 API Source
 
